@@ -1,0 +1,54 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Segoe UI', sans-serif;
+  --font-mono: 'SF Mono', ui-monospace, Menlo, monospace;
+
+  --color-bg: #0b0d12;
+  --color-surface: #12151c;
+  --color-panel: #181c25;
+  --color-raised: #20252f;
+  --color-line: #262b37;
+  --color-ink: #e8eaf0;
+  --color-muted: #8b93a7;
+  --color-faint: #5b6375;
+  --color-accent: #8b9cff;
+  --color-rh: #4fc3f7;
+  --color-lh: #ffb454;
+  --color-good: #4ade80;
+  --color-bad: #f87171;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+  overflow: hidden;
+}
+
+/* Zona de arrastre de la ventana (barra de título oculta en macOS). */
+.drag {
+  -webkit-app-region: drag;
+}
+.no-drag {
+  -webkit-app-region: no-drag;
+}
+
+input[type='range'] {
+  accent-color: var(--color-accent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}

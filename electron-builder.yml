@@ -1,0 +1,25 @@
+appId: com.pianocoach.app
+productName: Piano Coach
+copyright: Copyright © 2026 Cristobal Somoza
+directories:
+  output: release
+  buildResources: build
+files:
+  - out/**/*
+  - resources/**/*
+asarUnpack:
+  - resources/**
+mac:
+  category: public.app-category.music
+  target:
+    - target: dmg
+      arch: [arm64, x64]
+  # Sin Apple Developer ID: la app no va firmada ni notarizada (ver README).
+  identity: null
+dmg:
+  artifactName: Piano-Coach-${version}-${arch}.${ext}
+win:
+  target: nsis
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
